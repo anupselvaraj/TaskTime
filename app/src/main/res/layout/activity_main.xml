@@ -7,13 +7,74 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_Schedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginStart="79dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="246dp"
+        android:text="@string/schedule"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_Cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="376dp"
+        android:layout_marginEnd="0dp"
+        android:textColorHint="#F3F5F7"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Schedule"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_Cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="266dp"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_Schedule"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mesage" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textinput_delay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="136dp"
+        android:layout_marginBottom="52dp"
+        android:hint="@string/delay"
+        android:singleLine="false"
+        android:width="450dp"
+        android:maxWidth="450dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_mesage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_mesage"
+        android:layout_width="406dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/message"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Schedule"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textinput_delay" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
