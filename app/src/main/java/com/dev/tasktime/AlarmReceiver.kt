@@ -3,6 +3,7 @@ import android.app.NotificationManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.widget.Toast
 import androidx.core.app.NotificationCompat
 
 class AlarmReceiver : BroadcastReceiver() {
@@ -19,6 +20,8 @@ class AlarmReceiver : BroadcastReceiver() {
                 .setContentText("Notification sent with message $message")
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
             notificationManager.notify(1, builder.build())
+            Toast.makeText(context, "Alarm set successfully $message", Toast.LENGTH_SHORT).show()
+
         }
     }
 }

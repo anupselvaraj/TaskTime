@@ -3,6 +3,7 @@ import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.graphics.Color
 import android.os.Build
 
 class TaskTimeApp : Application() {
@@ -19,9 +20,13 @@ class TaskTimeApp : Application() {
                 channelName,
                 NotificationManager.IMPORTANCE_HIGH
             )
+
         } else {
             TODO("VERSION.SDK_INT < O")
         }
         notificationManager.createNotificationChannel(channel)
+        channel.enableLights(true)
+        channel.enableVibration(true)
+        channel.lightColor = Color.GREEN
     }
 }

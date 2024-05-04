@@ -5,76 +5,71 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textAlignment="center"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_Schedule"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="79dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="246dp"
-        android:text="@string/schedule"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_Cancel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="376dp"
-        android:layout_marginEnd="0dp"
-        android:textColorHint="#F3F5F7"
-        app:layout_constraintBottom_toTopOf="@+id/btn_Schedule"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/btn_Cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="79dp"
-        android:layout_marginBottom="266dp"
-        android:text="@string/cancel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_Schedule"
-        app:layout_constraintTop_toBottomOf="@+id/tv_mesage" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textinput_delay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:layout_marginBottom="52dp"
-        android:hint="@string/delay"
-        android:singleLine="false"
+        android:id="@+id/textinputMessage"
+        android:layout_width="409dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
         android:width="450dp"
         android:maxWidth="450dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_mesage"
+        android:singleLine="false"
+        android:text=""
+        android:hint="@string/message"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_mesage"
-        android:layout_width="406dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="50dp"
-        android:text="@string/message"
-        app:layout_constraintBottom_toTopOf="@+id/btn_Schedule"
+    <Button
+        android:id="@+id/btnSchedule"
+        android:layout_width="181dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="86dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/schedule"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Cancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textinput_delay" />
+        app:layout_constraintTop_toBottomOf="@+id/textinputMessage" />
+
+    <Button
+        android:id="@+id/btn_Cancel"
+        android:layout_width="175dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="122dp"
+        android:layout_marginBottom="62dp"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSchedule" />
+
+    <EditText
+        android:id="@+id/textinputDelay"
+        android:layout_width="324dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="56dp"
+        android:ems="10"
+        android:hint="@string/delay"
+        android:autofillHints=""
+        android:inputType="number"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.139" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
