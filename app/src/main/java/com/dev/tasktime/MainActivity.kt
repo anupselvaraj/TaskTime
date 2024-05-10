@@ -4,10 +4,12 @@ import android.os.Build
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.dev.tasktime.databinding.ActivityMainBinding
 import java.time.LocalDateTime
 import java.time.ZoneId
+import java.util.Date
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         val alarmScheduler = AlarmScheduler(this)
         var alarmItem: AlarmItem? = null
 
-        //val btnSchedule = findViewById<R.id.btn_schedule>()
+        //val btnSchedule = findViewById<Button>(R.id.btn_schedule) as Button
         val btnSchedule = binding.btnSchedule
         btnSchedule.setOnClickListener {
             run {
@@ -37,6 +39,7 @@ class MainActivity : AppCompatActivity() {
                     message = messageText
                 )
                 alarmItem?.let(alarmScheduler::schedule)
+                showAlert(secondText.toLong(), messageText)
             }
 
         }
@@ -46,6 +49,20 @@ class MainActivity : AppCompatActivity() {
             alarmItem?.let(alarmScheduler::cancel)
         }
     }
+    private fun showAlert(time: Long, message: String)
+    {
+        val date = Date(time)
+        val dateFormat = android.text.format.DateFormat.getLongDateFormat(applicationContext)
+        val timeFormat = android.text.format.DateFormat.getTimeFormat(applicationContext)
 
+        AlertDialog.Builder(this)
+            .setTitle("Notification Scheduled")
+            .setMessage(
+                "Title: New Reminder"  +
+                        "\nMessage: " + message +
+                        "\nAt: " + dateFormat.format(date) + " " + timeFormat.format(date))
+            .setPositiveButton("Okay"){_,_ ->}
+            .show()
+    }
 
 }

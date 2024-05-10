@@ -24,9 +24,10 @@ class TaskTimeApp : Application() {
         } else {
             TODO("VERSION.SDK_INT < O")
         }
-        notificationManager.createNotificationChannel(channel)
         channel.enableLights(true)
         channel.enableVibration(true)
         channel.lightColor = Color.GREEN
+        notificationManager.createNotificationChannel(channel)
+
     }
 }

@@ -24,17 +24,14 @@ class AlarmScheduler(
         }
         if(canScheduleExactAlarms(alarmManager))
         {
+            val pi = PendingIntent.getBroadcast(context, alarmItem.hashCode(),intent,
+                PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
 
-        alarmManager.setExactAndAllowWhileIdle(
-            AlarmManager.RTC_WAKEUP,
-            alarmTime,
-            PendingIntent.getBroadcast(
-                context,
-                alarmItem.hashCode(),
-                intent,
-                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
-        )
-        Log.e("Alarm", "Alarm set at $alarmTime")
+            alarmManager.setExactAndAllowWhileIdle(
+                AlarmManager.RTC_WAKEUP,
+                alarmTime,
+                pi)
+            Log.e("TastTimeApp", "Alarm set at $alarmTime")
         }
         else
         {
