@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-//        setContentView(R.layout.activity_main)
         setContentView(binding.root)
 
         val alarmScheduler = AlarmScheduler(this)
@@ -51,16 +50,24 @@ class MainActivity : AppCompatActivity() {
     }
     private fun showAlert(time: Long, message: String)
     {
-        val date = Date(time)
-        val dateFormat = android.text.format.DateFormat.getLongDateFormat(applicationContext)
-        val timeFormat = android.text.format.DateFormat.getTimeFormat(applicationContext)
+//        val date = Date(time)
+//        val dateFormat = android.text.format.DateFormat.getLongDateFormat(applicationContext)
+//        val timeFormat = android.text.format.DateFormat.getTimeFormat(applicationContext)
 
+//        AlertDialog.Builder(this)
+//            .setTitle("Notification Scheduled")
+//            .setMessage(
+//                "Title: New Reminder"  +
+//                        "\nMessage: " + message +
+//                        "\nAt: " + dateFormat.format(date) + " " + timeFormat.format(date))
+//            .setPositiveButton("Okay"){_,_ ->}
+//            .show()
         AlertDialog.Builder(this)
             .setTitle("Notification Scheduled")
             .setMessage(
                 "Title: New Reminder"  +
                         "\nMessage: " + message +
-                        "\nAt: " + dateFormat.format(date) + " " + timeFormat.format(date))
+                        "\nAt: " + time)
             .setPositiveButton("Okay"){_,_ ->}
             .show()
     }
