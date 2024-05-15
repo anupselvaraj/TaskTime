@@ -20,7 +20,7 @@ class AlarmReceiver : BroadcastReceiver() {
                 ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 val notification = NotificationCompat.Builder(ctx, channelId)
-                    .setSmallIcon(R.drawable.ic_launcher_foreground)
+                    .setSmallIcon(R.drawable.tasktimeicon)
                     .setContentTitle("Alarm Demo")
                     .setContentText("Notification sent with message $message")
                     .setPriority(NotificationCompat.PRIORITY_HIGH)
