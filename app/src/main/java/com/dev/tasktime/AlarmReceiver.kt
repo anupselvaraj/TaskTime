@@ -6,8 +6,7 @@ import android.content.Intent
 import android.os.Build
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
-import android.app.Notification
-import android.graphics.BitmapFactory
+
 
 class AlarmReceiver : BroadcastReceiver() {
 
